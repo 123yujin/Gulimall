@@ -5,7 +5,7 @@
 	<groupId>io.renren</groupId>
 	<artifactId>renren-fast</artifactId>
 	<version>3.0.0</version>
-	<packaging>jar</packaging>
+    <packaging>jar</packaging>
 	<description>renren-fast</description>
 
 	<parent>
@@ -13,6 +13,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.6</version>
 
+		<relativePath>pom.xml</relativePath>
 	</parent>
 
 	<properties>

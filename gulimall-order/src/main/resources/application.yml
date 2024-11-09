@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    password: 123
+    username: root
+    url: jdbc:mysql://192.168.88.133:3306/gulimall_oms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: 192.168.88.133:8848
+  application:
+    name: gulimall-order
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  typeAliasesPackage: com.cwy.gulimall.product.entity
+  global-config:
+    db-config:
+      id-type: auto
