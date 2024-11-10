@@ -50,6 +50,14 @@ public class PmsCategoryServiceImpl extends ServiceImpl<PmsCategoryDao, PmsCateg
         return categoryEntities;
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> list) {
+        //TODO
+
+        //逻辑删除
+        baseMapper.deleteBatchIds(list);
+    }
+
     //递归查找所有菜单的子菜单
     public List<PmsCategoryEntity> getChildrens(PmsCategoryEntity root,List<PmsCategoryEntity> all) {
 

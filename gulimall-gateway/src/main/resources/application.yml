@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: gulimall-gateway
   cloud:
     gateway:
       routes:
@@ -6,5 +8,17 @@ spring:
           uri: https://www.qq.com
           predicates:
             - Query=url,qq
-  application:
-    name: gulimall-gateway
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: admin-route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
